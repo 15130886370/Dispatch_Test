@@ -16,10 +16,10 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //serialSync()
+        serialSync()
         //serialAsync()
         //concurrentSync()
-        concurrentAsync()
+        //concurrentAsync()
         //groupAsyncTask1()
         //groupAsyncTask2()
         //semaphoreControl()
@@ -58,12 +58,6 @@ class ViewController: UIViewController {
             }
         }
         
-        queue2.sync {
-            for i in 10000 ..< 10010 {
-                print("🔵",i,Thread.current)
-            }
-        }
-        
     }
     //串行异步，一个队列可以开一条子线程，
     //同一个队列任务按顺序执行，不同队列
@@ -90,11 +84,6 @@ class ViewController: UIViewController {
             }
         }
         
-        queue2.async {
-            for i in 10000 ..< 10010 {
-                print("🔵",i,Thread.current)
-            }
-        }
 
     }
     
